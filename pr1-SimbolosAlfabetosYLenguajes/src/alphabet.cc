@@ -10,14 +10,11 @@
 // Archivo :
 // Contiene
 
-#include <iostream>
-#include <string>
+#include "../include/alphabet.h"
 
-#include "../include/processor.h"
+Alphabet::Alphabet() {
+  std::cout << "Hola mundo" << std::endl;
+}
 
-enum parser{INNAME = 1, OUTNAME, OPCODE};
-
-int main (int argc, char** argv) {
-  Processor reader(argv[1], argv[2], argv[3]);
-  return 0;
+Alphabet::~Alphabet() {  
 }

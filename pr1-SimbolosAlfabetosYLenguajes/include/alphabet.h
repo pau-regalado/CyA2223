@@ -10,14 +10,19 @@
 // Archivo :
 // Contiene
 
-#ifndef __CADENA__
-#define __CADENA__
+#ifndef __ALPHABET__
+#define __ALPHABET__
 
 #include <iostream>
+#include <vector>
 
-class Cadena {
+class Alphabet {
   public:
-    Cadena();
+    Alphabet();
+    ~Alphabet();
+
+  private:
+    std::vector<char> _simbolos;
 };
 
 #endif

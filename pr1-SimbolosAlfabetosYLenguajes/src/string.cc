@@ -10,8 +10,8 @@
 // Archivo :
 // Contiene
 
-#include "../include/cadena.h"
+#include "../include/string.h"
 
-Cadena::Cadena() {
-  std::cout << "Hola mundo" << std::endl;
+String::String() {
+
 }

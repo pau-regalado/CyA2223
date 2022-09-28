@@ -10,14 +10,15 @@
 // Archivo :
 // Contiene
 
+#ifndef __STRING__
+#define __STRING__
+
 #include <iostream>
-#include <string>
+#include <vector>
 
-#include "../include/processor.h"
+class String {
+  public:
+    String();
+};
 
-enum parser{INNAME = 1, OUTNAME, OPCODE};
-
-int main (int argc, char** argv) {
-  Processor reader(argv[1], argv[2], argv[3]);
-  return 0;
-}
+#endif
