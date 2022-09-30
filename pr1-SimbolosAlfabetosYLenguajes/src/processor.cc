@@ -12,7 +12,7 @@
 
 #include "../include/processor.h"
 
-Processor::Processor(std::string dataFile, std::string outputFile, std::string opcode) {
+Processor::Processor(std::string dataFile, std::string outputFile, int opcode) {
   std::fstream inputFile(dataFile);
   if (!inputFile.is_open()) {
     std::cout << "[Error]: could not open " << dataFile << std::endl;
@@ -26,7 +26,7 @@ Processor::Processor(std::string dataFile, std::string outputFile, std::string o
       _ready = true;
     }
   }
-  
+
   _opcode = opcode;
 
   if (!isReady()) {
@@ -50,10 +50,12 @@ bool Processor::isReady() {
 }
 
 std::string Processor::run(std::string line) {
-  switch ('u')
+  
+  switch (_opcode)
   {
-  case 'u':
-    /* code */
+  case 1:
+    // LONGITUD
+    //return objetocadena.size();
     break;
   
   default:

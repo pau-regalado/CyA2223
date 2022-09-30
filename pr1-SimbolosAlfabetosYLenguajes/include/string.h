@@ -14,11 +14,17 @@
 #define __STRING__
 
 #include <iostream>
-#include <vector>
+#include <string>
 
 class String {
   public:
-    String();
+    String(std::string self);
+    ~String();
+
+    // Func methods
+    int lenght(void);
+  private:
+    std::string _self;
 };
 
 #endif

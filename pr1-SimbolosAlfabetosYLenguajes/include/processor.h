@@ -19,7 +19,7 @@
 
 class Processor {
   public:
-    Processor(std::string dataFile, std::string outputFile, std::string opcode);
+    Processor(std::string dataFile, std::string outputFile, int opcode);
     ~Processor();
 
     // Getters
@@ -30,7 +30,7 @@ class Processor {
 
   private:
     bool _ready;
-    std::string _opcode;
+    int _opcode;
     // std::fstream* inputFile, outputFile;
 };
 

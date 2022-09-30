@@ -12,6 +12,10 @@
 
 #include "../include/string.h"
 
-String::String() {
+String::String(std::string self): _self(self){
 
+}
+
+int String::lenght() {
+    return _self.size();
 }
