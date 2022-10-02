@@ -12,7 +12,7 @@
 
 #include "../include/processor.h"
 
-Processor::Processor(std::string dataFile, std::string outputFile, int opcode) {
+Processor::Processor(std::string dataFile, std::string outputFile, char* opcode) {
   std::fstream inputFile(dataFile);
   if (!inputFile.is_open()) {
     std::cout << "[Error]: could not open " << dataFile << std::endl;
@@ -50,10 +50,30 @@ bool Processor::isReady() {
 }
 
 std::string Processor::run(std::string line) {
-  
+  std::vector<std::string> stringVector; 
+  unsigned character = 0; 
+  while(character <= line.size()) {
+    std::string aux;
+    while(character <= line.size() && line[character] != ' '){
+      aux.push_back(line[character]);
+      character++;
+    }    
+    stringVector.push_back(aux);
+    character++;
+  }
+
+  std::cout <<"------------------------------" << std::endl;
+  std::cout <<"LINEA = " << line << std::endl;
+  for (unsigned i = 0; i < stringVector.size(); i++) {
+    std::cout << "[" << i << " ] = " << stringVector[i] << std::endl;
+  }
+      
+  std::cout <<"------------------------------" << std::endl;
+
+
   switch (_opcode)
   {
-  case 1:
+  case '1':
     // LONGITUD
     //return objetocadena.size();
     break;
@@ -61,6 +81,5 @@ std::string Processor::run(std::string line) {
   default:
     break;
   }
-  std::cout << line << std::endl;
   return line;
 }

@@ -16,10 +16,11 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <vector>
 
 class Processor {
   public:
-    Processor(std::string dataFile, std::string outputFile, int opcode);
+    Processor(std::string dataFile, std::string outputFile, char* opcode);
     ~Processor();
 
     // Getters
@@ -30,7 +31,7 @@ class Processor {
 
   private:
     bool _ready;
-    int _opcode;
+    char* _opcode;
     // std::fstream* inputFile, outputFile;
 };
 
