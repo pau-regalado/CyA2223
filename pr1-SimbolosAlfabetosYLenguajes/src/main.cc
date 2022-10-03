@@ -7,8 +7,8 @@
 // Autor:Paula Regalado de León
 // Correo: alu0101330174@ull.es
 // Fecha: 28/09/2022
-// Archivo :
-// Contiene
+// Archivo : main.cc
+// Contiene la llamada al objeto procesador del fichero de datos
 
 #include <iostream>
 #include <string>
@@ -18,6 +18,6 @@
 enum parser{INNAME = 1, OUTNAME, OPCODE};
 
 int main (int argc, char** argv) {
-  Processor reader(argv[INNAME], argv[OUTNAME], argv[OPCODE]);
+  Processor reader(argv[INNAME], argv[OUTNAME], argv[OPCODE][0]);
   return 0;
 }

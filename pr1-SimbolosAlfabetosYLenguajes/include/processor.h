@@ -7,8 +7,8 @@
 // Autor:Paula Regalado de León
 // Correo: alu0101330174@ull.es
 // Fecha: 28/09/2022
-// Archivo :
-// Contiene
+// Archivo : processor.h
+// Contiene la definicion de la clase Processor
 
 #ifndef __PROCESSOR__
 #define __PROCESSOR__
@@ -17,10 +17,15 @@
 #include <fstream>
 #include <string>
 #include <vector>
+#include "../include/alphabet.h"
+#include "../include/string.h"
 
+/**
+ * Clase encargada de la lectura y escritura de ficheros, y el procesado de cada linea 
+ */
 class Processor {
   public:
-    Processor(std::string dataFile, std::string outputFile, char* opcode);
+    Processor(std::string dataFile, std::string outputFile, char opcode);
     ~Processor();
 
     // Getters
@@ -31,8 +36,7 @@ class Processor {
 
   private:
     bool _ready;
-    char* _opcode;
-    // std::fstream* inputFile, outputFile;
+    char _opcode;
 };
 
 #endif

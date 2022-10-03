@@ -7,22 +7,32 @@
 // Autor:Paula Regalado de León
 // Correo: alu0101330174@ull.es
 // Fecha: 28/09/2022
-// Archivo :
-// Contiene
+// Archivo : alphabet.h
+// Contiene la definicion de la Clase Alphabet
 
 #ifndef __ALPHABET__
 #define __ALPHABET__
 
 #include <iostream>
+#include <set>
 #include <vector>
+#include <string>
+#include <algorithm>
+#include "string.h"
 
+/**
+ * Representa un alfabeto, un conjunto de simbolos 
+ */
 class Alphabet {
   public:
-    Alphabet();
+    Alphabet(std::vector<std::string> alphabet);
+    Alphabet(std::string alphabet);
     ~Alphabet();
 
+    bool belongsTo(String string);
+
   private:
-    std::vector<char> _simbolos;
+    std::set<char> _symbols;
 };
 
 #endif
