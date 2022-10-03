@@ -23,26 +23,26 @@ Processor::Processor(std::string dataFile, std::string output, char opcode) {
   // Si el fichero de entrada no existe: ERROR
   if (!inputFile.is_open()) {
     std::cout << "[Error]: could not open " << dataFile << std::endl;
-    _ready = false;
+    ready_ = false;
   } else {
     // Si el fichero entrada esta vacío: ERROR
     if (inputFile.get() == EOF) {
       std::cout << "[Error]: " << dataFile  << " is empty" << std::endl;
-      _ready = false;
+      ready_ = false;
     } else {
     // Si consigue leer, reinicia a la posición 0 del fichero
       inputFile.seekg(0, inputFile.beg); // Reiniciamos el puntero de lectura al principio para correguir la lectura de arriba
-      _ready = true;
+      ready_ = true;
     }
   }
   // Abre fichero para escritura, sobreescribiendo el contenido
   std::fstream outputFile(output, std::fstream::trunc | std::fstream::out);
   if (!outputFile.is_open()) {
     std::cout << "[Error]: could not open " << dataFile << std::endl;
-    _ready = false;
+    ready_ = false;
   }
 
-  _opcode = opcode;
+  opcode_ = opcode;
 
   if (!isReady()) {
     std::cout << "Aborting program" << std::endl;
@@ -64,7 +64,7 @@ Processor::~Processor() {
 
 // Obtiene el estado del procesador, si ha habido algun error
 bool Processor::isReady() {
-  return _ready;
+  return ready_;
 }
 
 // Procesa una linea leida por el procesador y devuelve el resultado
@@ -102,7 +102,7 @@ std::string Processor::run(std::string line) {
   }
 
   // Realiza la operacion correspondiente al opcode
-  switch (_opcode) {
+  switch (opcode_) {
   case 'l':
     return string->length();
     break;

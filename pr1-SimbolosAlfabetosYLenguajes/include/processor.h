@@ -35,8 +35,8 @@ class Processor {
     std::string run(std::string line);
 
   private:
-    bool _ready;
-    char _opcode;
+    bool ready_;
+    char opcode_;
 };
 
 #endif

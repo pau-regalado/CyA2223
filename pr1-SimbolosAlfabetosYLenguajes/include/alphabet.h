@@ -32,7 +32,7 @@ class Alphabet {
     bool belongsTo(String string);
 
   private:
-    std::set<char> _symbols;
+    std::set<char> symbols_;
 };
 
 #endif

@@ -16,9 +16,9 @@
 // un conjunto
 Alphabet::Alphabet(std::vector<std::string> alphabet) {
   // Debemos meter siempre la cadena vacia en el alfabeto?
-  _symbols.insert('&');
+  symbols_.insert('&');
   for (unsigned i = 0; i < alphabet.size(); i++) {
-    _symbols.insert(alphabet[i][0]);
+    symbols_.insert(alphabet[i][0]);
   }
 }
 
@@ -26,9 +26,9 @@ Alphabet::Alphabet(std::vector<std::string> alphabet) {
 // un conjunto
 Alphabet::Alphabet(std::string string) {
   // Sacamos el alfabeto de la cadena
-  _symbols.insert('&');
+  symbols_.insert('&');
   for (unsigned i = 0; i < string.size(); i++) {
-    _symbols.insert(string[i]);
+    symbols_.insert(string[i]);
   }
 }
 
@@ -38,7 +38,7 @@ Alphabet::~Alphabet() {
 // Comprueba si una cadena esta formada por simbolos del alfabeto
 bool Alphabet::belongsTo(String string) {
   for (unsigned i = 0; i < string.getSelf().size(); i++) {
-    if (_symbols.count(string.getSelf()[i]) == 0)
+    if (symbols_.count(string.getSelf()[i]) == 0)
       return false;
   }
   return true;

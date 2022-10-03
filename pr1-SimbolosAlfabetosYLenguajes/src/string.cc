@@ -13,36 +13,36 @@
 #include "../include/string.h"
 
 // Inicializa el vector de simbolos con el vector de simbolos recibido
-String::String(std::vector<char> self): _self(self){
+String::String(std::vector<char> self): self_(self){
  
 }
 
 // Inicializa el vector de simbolos con los simbolos de la cadena recibida
 String::String(std::string self) {
   for (unsigned i = 0; i < self.size(); i++)
-    _self.push_back(self[i]);
+    self_.push_back(self[i]);
 }
 
 // Vacia el vector
 String::~String(){
-  _self.clear();
+  self_.clear();
 }
 
 // Devuelve la informacion de la clase
 std::vector<char> String::getSelf(void) {
-  return _self;
+  return self_;
 }
 
 // Calcula la longitud de la cadena
 std::string String::length() {
-  return std::to_string((int)_self.size());
+  return std::to_string((int)self_.size());
 }
 
 // Calcula la cadena inversa
 std::string String::reverse(void){
   std::string aux;
-  for (int i = _self.size() - 1; i >= 0; i--){
-    aux += _self[i];
+  for (int i = self_.size() - 1; i >= 0; i--){
+    aux += self_[i];
   }
   return aux;
 }
@@ -51,9 +51,9 @@ std::string String::reverse(void){
 std::string String::prefix(void){
   std::string aux;
   aux.append("& ");
-  for (unsigned i = 0; i < _self.size(); i++) {
+  for (unsigned i = 0; i < self_.size(); i++) {
     for (unsigned j = 0; j <= i; j++) {
-      aux += _self[j];
+      aux += self_[j];
     }
     aux += ' ';
   }
@@ -64,9 +64,9 @@ std::string String::prefix(void){
 std::string String::sufix(void){
   std::string aux;
   aux.append("& ");
-  for (int i = _self.size() - 1; i >= 0; i--) {
-    for (unsigned j = i; j < _self.size(); j++) {
-      aux += _self[j];
+  for (int i = self_.size() - 1; i >= 0; i--) {
+    for (unsigned j = i; j < self_.size(); j++) {
+      aux += self_[j];
     }
     aux += ' ';
   }
@@ -76,10 +76,10 @@ std::string String::sufix(void){
 // Calcula la cadena formada por el conjunto de subcadenas de la cadena
 std::string String::substrings(void){
   std::string aux;
-  for (unsigned i = 0; i < _self.size(); i++) {
-    for (unsigned j = i; j < _self.size(); j++) {
+  for (unsigned i = 0; i < self_.size(); i++) {
+    for (unsigned j = i; j < self_.size(); j++) {
       for (unsigned k = i; k <= j; k++) {
-        aux += _self[k];
+        aux += self_[k];
       }
       aux += ' ';
     }

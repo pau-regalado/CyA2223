@@ -38,7 +38,7 @@ class String {
     std::string substrings(void);
     
   private:
-    std::vector<char> _self;
+    std::vector<char> self_;
 };
 
 #endif
