@@ -49,20 +49,12 @@ Processor::Processor(int argc, char** params) {
       help();
     }
   } else if (argc == 5) {
-    if (op_binarias.count(params[4][0]) == 1) {
-      std::cout << "Error. Bad arguments" << std::endl;
-      help();
-    } else if (op_unarias.count(params[4][0]) == 1) {
       ready_ = true;
       dataFile1 = params[1];
       dataFile2 = params[2];
       output = params[3];
       opcode_ = params[4][0];
       initializer(dataFile1, dataFile2, output);
-    } else {
-      std::cout << "Error. Bad opcode" << std::endl;
-      help();
-    }
   }
 }
 
@@ -119,10 +111,13 @@ void Processor::initializer(std::string dataFile1, std::string dataFile2, std::s
     std::string line2;
     // Comprobamos si los ficheros tienen el mismo numero de lineas
     unsigned nlines1 = 0, nlines2 = 0;
-
+/*
     while (std::getline(inputFile, line1)) { nlines1++; }
     while (std::getline(secondInputFile, line2)) { nlines2++; }
 
+    inputFile.open(dataFile1);
+    secondInputFile.open(dataFile2);
+*/
     if (nlines1 != nlines2) {
       ready_ = false;
       std::cout  << "Error. Files has not the same number of lines." << std::endl;
