@@ -93,8 +93,8 @@ std::string Calculator::run(std::string line) {
         std::string newName;
         switch (elementos[element_pos][0]) {
           case '+': {
-            lenguaje1 = getOperandByName(stack.top()); stack.pop();
             lenguaje2 = getOperandByName(stack.top()); stack.pop();
+            lenguaje1 = getOperandByName(stack.top()); stack.pop();
             newName = AUX_PREFFIX + std::to_string(acc);
             acc++;
             result = lenguaje1 + lenguaje2;
@@ -106,8 +106,8 @@ std::string Calculator::run(std::string line) {
             break;
           }
           case '|': {
-            lenguaje1 = getOperandByName(stack.top()); stack.pop();
             lenguaje2 = getOperandByName(stack.top()); stack.pop();
+            lenguaje1 = getOperandByName(stack.top()); stack.pop();
             newName = AUX_PREFFIX + std::to_string(acc);
             acc++;
             result = lenguaje1 | lenguaje2;
@@ -118,8 +118,8 @@ std::string Calculator::run(std::string line) {
             break;
           }
           case '^': {
-            lenguaje1 = getOperandByName(stack.top()); stack.pop();
             lenguaje2 = getOperandByName(stack.top()); stack.pop();
+            lenguaje1 = getOperandByName(stack.top()); stack.pop();
             newName = AUX_PREFFIX + std::to_string(acc);
             acc++;
             result = lenguaje1 ^ lenguaje2;
@@ -130,8 +130,8 @@ std::string Calculator::run(std::string line) {
             break;
           }
           case '-': {
-            lenguaje1 = getOperandByName(stack.top()); stack.pop();
             lenguaje2 = getOperandByName(stack.top()); stack.pop();
+            lenguaje1 = getOperandByName(stack.top()); stack.pop();
             newName = AUX_PREFFIX + std::to_string(acc);
             acc++;
             result = lenguaje1 - lenguaje2;
