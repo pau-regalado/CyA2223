@@ -1,26 +1,19 @@
 SRC=../src/
 INCLUDE=../include/
 FLAGS=-std=c++14 -g -Wall
+ 
+all: token processor main
 
-all: main 
-all: string alphabet lenguage calculator main
+token: 
+	g++ $(FLAGS) $(SRC)token.cc -c
 
-string: 
-	g++ $(FLAGS) $(SRC)string.cc -c
-
-alphabet: 
-	g++ $(FLAGS) $(SRC)alphabet.cc -c
-
-calculator: 
-	g++ $(FLAGS) $(SRC)calculator.cc -c
-
-lenguage: 
-	g++ $(FLAGS) $(SRC)language.cc -c
+processor: 
+	g++ $(FLAGS) $(SRC)processor.cc -c
 
 main:
-	g++ $(FLAGS) $(SRC)main.cc string.o alphabet.o calculator.o language.o -o main
+	g++ $(FLAGS) $(SRC)main.cc token.o processor.o -o main
 
 clean:
 	rm main
 	make
-	./main ../dataFile/lenguajes.txt
+	./main ../dataFile/entrada.cc ../dataFile/salida.txt
