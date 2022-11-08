@@ -10,8 +10,9 @@
 *
 * @see https :// github . com / IB -2022 -2023/ IB - class - code - examples /
 */
-# include <iostream>
-# include <cassert>
+#include <iostream>
+#include <cassert>
+#ifndef _test_
 // Returns the factorial of the argument
 int Factorial ( int number ) {
   switch ( number ) {
@@ -35,3 +36,4 @@ int main () {
   }
   return 0;
 }
+#endif

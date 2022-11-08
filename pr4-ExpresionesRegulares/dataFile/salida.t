@@ -1,16 +1,11 @@
 VARIABLES:
-  [Line 23]       int factorial = 1;
-  [Line 32]   int limit ;
+  [Line 22]       int factorial = 1;
+  [Line 31]   int limit ;
 LOOPS:
 |- FOR:
-  [Line 24] for
-  [Line 34] for
+  [Line 23] for
+  [Line 33] for
 |- WHILE:
-INCLUDE:
-  [Line 13] #include
-  [Line 14] #include
-IFNDEF:
-  [Line 15] #ifndef
 COMMENTS:
   -----
 [Line 1 - 11] DESCRIPTION: /* *
@@ -25,6 +20,6 @@ COMMENTS:
 *
 * @see https :// github . com / IB -2022 -2023/ IB - class - code - examples /*/
 -----
-  [Line 16] // Returns the factorial of the argument
+  [Line 15] // Returns the factorial of the argument
 MAIN:
-  [Line 30] int main () {
+  [Line 29] int main () {
