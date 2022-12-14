@@ -17,6 +17,8 @@ class Production {
     // Production(std::string start, std::string terminal, std::string nonTerminal);
     ~Production();
     
+    void setTerminal(std::string terminal);
+    void setNonTerminal(std::string nonTerminal);
     void addProducction(std::string terminal, std::string nonTerminal);
 
     std::map<std::string, std::string> getProducciones(void);

@@ -69,10 +69,8 @@ bool Automata::evaluate(std::string string) {
     if (symbol == "&") {
       transitedStates = actualStates_;
     }
-    // Insertamos los identificadores de los estados a los que
-    // transicionamos desde cada estado actual
     for (unsigned state : actualStates_) {
-      for (unsigned stateIDs : states_[state]->getTransition(symbol)) {
+      for (unsigned stateIDs : states_[state]->getTransition(symbol)){
         transitedStates.insert(stateIDs);
       }
     }
@@ -111,7 +109,7 @@ Gramatica Automata::convertToGrammar(void) {
         result.addNonTerminalSymbol(auxNonTerminal);
         result.addProduction(nTerminal, transition.first, auxNonTerminal);
       }
-    }
+    } 
   }
   return result;
 }

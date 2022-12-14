@@ -11,10 +11,10 @@ BUILD	:= build
 INCLUDE := include
 LIB     := lib
 LIBRARIES   := 
-EXECUTABLE  := dfa_simulator
+EXECUTABLE  := dfa2grammar
+PARAMS    			:= dataFile/dfap7.fa outputFiles/test1.gra
 PARAMSDFA 			:= dataFile/modificacion.fa dataFile/modificacion.txt
 PARAMSNFA 			:= dataFile/nfamodificacion.fa dataFile/modificacion.txt
-PARAMSP6   			:= dataFile/dfa6.fa dataFile/p6.txt
 SOURCES := $(wildcard $(SRC)/*.cc)
 OBJS	:= $(patsubst $(SRC)/%.cc,$(BUILD)/%.o,$(SOURCES))
 
@@ -43,17 +43,7 @@ run:
 dfa:
 	clear
 	@echo "🚀 Executing..."
-	./$(BIN)/$(EXECUTABLE) $(PARAMSDFA)
-
-nfa:
-	clear
-	@echo "🚀 Executing..."
-	./$(BIN)/$(EXECUTABLE) $(PARAMSNFA)  
-
-mod:
-	clear
-	@echo "🚀 Executing..."
-	./$(BIN)/$(EXECUTABLE) $(PARAMSP6)  
+	./$(BIN)/$(EXECUTABLE) $(PARAMSDFA) 
 
 clean:
 	@echo "🧹 Clearing..."

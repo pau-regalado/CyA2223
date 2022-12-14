@@ -11,14 +11,13 @@ BUILD	:= build
 INCLUDE := include
 LIB     := lib
 LIBRARIES   := 
-EXECUTABLE  := dfa_simulator
-PARAMSDFA 			:= dataFile/modificacion.fa dataFile/modificacion.txt
-PARAMSNFA 			:= dataFile/nfamodificacion.fa dataFile/modificacion.txt
-PARAMSP6   			:= dataFile/dfa6.fa dataFile/p6.txt
+EXECUTABLE  := monedas
+PARAMS    			:= 10
+PARAMS8   			:= dataFile/input.gra outputFiles/test1.gra
 SOURCES := $(wildcard $(SRC)/*.cc)
 OBJS	:= $(patsubst $(SRC)/%.cc,$(BUILD)/%.o,$(SOURCES))
 
-.PHONY: all project dfa nfa run clean
+.PHONY: all project run clean
 
 all: $(BIN)/$(EXECUTABLE)
 
@@ -39,21 +38,6 @@ run:
 	clear
 	@echo "🚀 Executing..."
 	./$(BIN)/$(EXECUTABLE) $(PARAMS)
-
-dfa:
-	clear
-	@echo "🚀 Executing..."
-	./$(BIN)/$(EXECUTABLE) $(PARAMSDFA)
-
-nfa:
-	clear
-	@echo "🚀 Executing..."
-	./$(BIN)/$(EXECUTABLE) $(PARAMSNFA)  
-
-mod:
-	clear
-	@echo "🚀 Executing..."
-	./$(BIN)/$(EXECUTABLE) $(PARAMSP6)  
 
 clean:
 	@echo "🧹 Clearing..."

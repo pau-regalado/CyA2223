@@ -114,7 +114,6 @@ void Gramatica::convert2CFG() {
           addProduction(nonTerminal, new_prod);
           nonTerminalSymbol_.insert(nonTerminal);
           produc.getProducciones().push_back(nonTerminal);
-
         }
       }
     }

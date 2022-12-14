@@ -1,6 +1,6 @@
-Número de simbolos del alfabeto: {3
+Número de simbolos terminales: 3
 Alfabeto: {& a b }
-3
+Número de simbolos no terminales: 3
 V: {Q0 Q1 Q2 }
 3
 Q0 -> aQ0 | bQ1

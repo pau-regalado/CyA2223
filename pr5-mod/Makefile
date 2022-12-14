@@ -15,6 +15,7 @@ EXECUTABLE  := dfa_simulator
 PARAMSDFA 			:= dataFile/modificacion.fa dataFile/modificacion.txt
 PARAMSNFA 			:= dataFile/nfamodificacion.fa dataFile/modificacion.txt
 PARAMSMOD 			:= dataFile/nfamodificacion.fa dataFile/modificacion.fa dataFile/modificacion.txt
+PARAMS6   			:= dataFile/dfa6.fa
 SOURCES := $(wildcard $(SRC)/*.cc)
 OBJS	:= $(patsubst $(SRC)/%.cc,$(BUILD)/%.o,$(SOURCES))
 
@@ -54,6 +55,11 @@ mod:
 	clear
 	@echo "🚀 Executing..."
 	./$(BIN)/$(EXECUTABLE) $(PARAMSMOD)  
+
+p:
+	clear
+	@echo "🚀 Executing..."
+	./$(BIN)/$(EXECUTABLE) $(PARAMS6)  
 
 clean:
 	@echo "🧹 Clearing..."

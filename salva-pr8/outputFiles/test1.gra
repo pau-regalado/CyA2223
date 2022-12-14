@@ -1,0 +1,24 @@
+3
+a
+b
+c
+3
+A
+B
+C
+15
+A -> DBEB
+A -> DEB
+A -> DBE
+A -> DE
+B -> DC
+B -> EC
+B -> a
+B -> b
+C -> DC
+C -> EC
+C -> a
+C -> b
+C -> c
+D -> a
+E -> b
